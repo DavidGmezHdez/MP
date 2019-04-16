@@ -8,23 +8,23 @@ CPPFLAGS = -Wall -g  -I$(INC) -c
 
 
 # **** Compilación de módulos ****
-$(BIN)/ejercicio6: $(OBJ)/ejercicio6.o $(LIB)/libejercicio6.a
-	$(CXX) -o $(BIN)/ejercicio6 $(OBJ)/ejercicio6.o -I$(INC) -L$(LIB) -lejercicio6
+$(BIN)/ejercicio7: $(OBJ)/ejercicio7.o $(LIB)/libejercicio7.a
+	$(CXX) -o $(BIN)/ejercicio7 $(OBJ)/ejercicio7.o -I$(INC) -L$(LIB) -lejercicio7
 
-$(LIB)/libejercicio6.a : $(OBJ)/Matriz2D.o 
-	ar rvs $(LIB)/libejercicio6.a $(OBJ)/Matriz2D.o
+$(LIB)/libejercicio7.a : $(OBJ)/Matriz2D.o 
+	ar rvs $(LIB)/libejercicio7.a $(OBJ)/Matriz2D.o
 
 $(OBJ)/Matriz2D.o : $(SRC)/Matriz2D.cpp
 	$(CXX) $(CPPFLAGS)  -o $(OBJ)/Matriz2D.o $(SRC)/Matriz2D.cpp -I$(INC)
 
 
-$(OBJ)/ejercicio6.o : $(SRC)/ejercicio6.cpp
-	$(CXX) $(CPPFLAGS)  -o $(OBJ)/ejercicio6.o $(SRC)/ejercicio6.cpp -I$(INC)
+$(OBJ)/ejercicio7.o : $(SRC)/ejercicio7.cpp
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/ejercicio7.o $(SRC)/ejercicio7.cpp -I$(INC)
 
-all: $(BIN)/ejercicio6	
+all: $(BIN)/ejercicio7	
 # **** Ejecutar ** **
 exec:
-	./$(BIN)/ejercicio6 
+	./$(BIN)/ejercicio7 
 # **** Limpieza ****
 clean :
 	-rm $(OBJ)/* $(BIN)/* $(LIB)/*

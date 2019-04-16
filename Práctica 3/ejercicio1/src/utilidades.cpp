@@ -19,7 +19,7 @@ void imprimir(int **secuencia, int util){
 void ordenarPunteros(int *array, int **parray, int util){
     int *temp;
     for(int i=0;i<util;i++){
-        *parray[i] = array[i];
+        parray[i] = &array[i];
     }
 
     for (int i=1;i<util; i++){

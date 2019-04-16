@@ -31,7 +31,7 @@ int main() {
     Matriz2D *obj2 = obj1.copiarMatriz();
 
     // Se muestra la matriz creada mediante copia
-    cout << "Matriz copiada a partir de la original: ";
+    cout << "Matriz copiada a partir de la original: "<<endl;
     obj2->mostrarPantalla();
 
     // Se libera obj2

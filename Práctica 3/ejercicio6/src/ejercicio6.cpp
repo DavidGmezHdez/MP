@@ -43,7 +43,7 @@ int main() {
         obj2->mostrarPantalla();
         delete obj2;
     }
-/*
+
     // Se elimina de obj1 la fila 0
     cout << "Matriz obtenida al eliminar la primera fila: " << endl;
     obj1.eliminarFila(0);
@@ -55,6 +55,6 @@ int main() {
     cout << "Matriz obtenida al eliminar la columna 1 sobre la anterior: " << endl;
     obj1.eliminarColumna(1);
     obj1.mostrarPantalla();
-    */
+    
 }
 

@@ -34,10 +34,13 @@ public:
    ~Matriz2D();
    
    // Asignar valor a posicion
-   bool asignarValor(int fila, int columna, int valor);
+   void asignarValor(int fila, int columna, int valor);
    
    // Metodo para mostrar por pantalla
    void mostrarPantalla();
+
+   //funcion para mostrar posicion de la matriz
+    int getmatriz(int fil,int col);
    
    // Metodo de copia
    Matriz2D * copiarMatriz();

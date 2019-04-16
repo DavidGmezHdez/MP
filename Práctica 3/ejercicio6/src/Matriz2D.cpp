@@ -66,15 +66,13 @@
    
    // Metodo para extraer submatriz
    Matriz2D * Matriz2D::extrarSubmatriz(int filaIni, int colIni, int filaFin, int colFin){
-       int numerof = filaFin - filaIni;
-       int numeroc = colFin - colIni;
-       cout<<endl;
-       cout<<numerof<<" "<<numeroc<<endl;
+       int numerof = filaFin - filaIni + 1;
+       int numeroc = colFin - colIni + 1;
        Matriz2D* resultado= new Matriz2D(numerof,numeroc);
        
        for(int i=0;i<numerof;i++){
            for(int j=0;j<numeroc;j++){
-               resultado->asignarValor(i,j,matriz[filaIni+i][colFin+j]);
+               resultado->asignarValor(i,j,matriz[filaIni+i][colIni+j]);
            }
        }
        return resultado;
