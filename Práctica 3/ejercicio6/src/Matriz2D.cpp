@@ -80,10 +80,59 @@
    
    // Metodo para eliminar fila de la matriz
    void Matriz2D::eliminarFila(int fila){
-       delete [] matriz[fila];
+       int **matrizaux = new int*[numeroFilas-1];
+       for(int i=0;i<numeroFilas;i++){
+           matrizaux[i] = new int[numeroColumnas];
+       }
+
+       for(int i=0;i<fila;i++){
+           for(int j=0;j<numeroColumnas;j++){
+               matrizaux[i][j] = matriz[i][j];
+           }
+       }
+
+       for(int i= fila+1;i<numeroFilas;i++){
+           for(int j=0;j<numeroColumnas;j++){
+               matrizaux[i-1][j] = matriz[i][j];
+           }
+       }
+
+       delete [] matriz[0];
+       delete [] matriz;
+       matriz = matrizaux;
+       numeroFilas--;
    }
    
    // Metodo para eliminar una columna
    void Matriz2D::eliminarColumna(int columna){
-       delete [] matriz[columna]; 
+        int **matrizaux = new int*[numeroFilas];
+        int contador = 0;
+        for(int i=0;i<numeroFilas;i++){
+           matrizaux[i] = new int[numeroColumnas-1];
+        }
+
+        numeroColumnas--;
+        for(int i=0;i<numeroFilas;i++){
+            contador=0;
+            for(int j=0;j<columna;j++){
+                matrizaux[i][j]=matriz[i][j];
+                contador++;
+            }
+        }
+
+        if(contador<numeroColumnas){
+            for(int i=0;i<numeroFilas;i++){
+                for(int j=columna;j<numeroColumnas;j++){
+                    matrizaux[i][j] = matriz[i][j+1];
+                }
+            }
+        }
+
+    for(int i=0;i<numeroFilas;i++){
+           delete [] matriz[i];
+       }
+
+       delete [] matriz;
+
+    matriz = matrizaux;
    }

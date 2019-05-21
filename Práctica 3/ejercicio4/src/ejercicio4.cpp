@@ -21,8 +21,9 @@ int main(){
     cout<<"Lista inicial: "<<endl;
     lista.mostrar();
     cout << endl;
-
+    
     // Se comprueba que la longitud es 10
+    
     if(lista.obtenerLongitud() == 10){
         cout << "Lista con longitud 10" << endl;
     }
@@ -37,11 +38,13 @@ int main(){
     lista.eliminarFinal();
 
     // Se comprueba que se han eliminado de forma correcta
+    
     cout << "Lista tras liberar tres elementos del final: " << endl;
     lista.mostrar();
     cout << endl;
 
     // Se comprueba que la longitud sea 7
+    
     if(lista.obtenerLongitud() == 7){
         cout << "Lista con longitud 7" << endl;
     }
@@ -54,6 +57,7 @@ int main(){
     lista.agregarInicio(0);
 
     // Se muestra su contenido
+    
     cout << "Lista tras insertar 0 al inicio: " << endl;
     lista.mostrar();
     cout << endl;
@@ -66,7 +70,7 @@ int main(){
         cout << "Problema: lista deberia tener longitud igual a 8" << endl;
     }
     cout << endl;
-
+    
     // Se obtiene ahora el elemento que esta en la posicion 3, que debe ser
     // 3
     Celda *pCelda3=lista.obtener(3);
@@ -107,5 +111,6 @@ int main(){
 
     // Se eliminan todas las celda
     lista.liberarEspacio();
+    
 }
 

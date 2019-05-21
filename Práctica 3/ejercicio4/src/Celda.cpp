@@ -5,7 +5,8 @@
      * Constructor de la clase
      */
     Celda::Celda(double info){
-        this->info = info;
+        this->info=info;
+        sig=NULL;
     }
 
     /**
@@ -13,7 +14,11 @@
      * @return
      */
     double Celda::obtenerInfo(){
-        return info;
+        return this->info;
+    }
+
+    void Celda::asignarInfo(double dato){
+        this->info = dato;
     }
 
     /**
@@ -28,19 +33,19 @@
      * Se asigna valor cero al puntero siguiente
      */
     void Celda::anularSiguiente(){
-        *sig = 0;
+        this->sig = 0;
     }
 
     /**
      * Se asigna el valor de siguiente
      */
     void Celda::asignarSiguiente(Celda *pCelda){
-        *sig = *pCelda;
+        this->sig = pCelda;
     }
 
     /**
      * Metodo para imprimir el contenido de una celda
      */
     void Celda::mostrar(){
-        cout<<"Celda "<< info << " "<<"Valor de la siguiente celda "<<sig<<" ";
+        cout<<"-->"<<this->info;
     }

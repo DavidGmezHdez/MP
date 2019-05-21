@@ -3,7 +3,9 @@
 #define    LISTA_H
 
 #include "Celda.h"
+#include <iostream>
 
+using namespace std;
 /**
  * Clase Lista, clase para acceder a la funcionalidad
  * de una lista enlazada

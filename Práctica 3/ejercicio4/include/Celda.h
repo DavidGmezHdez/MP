@@ -33,6 +33,13 @@ public:
     double obtenerInfo();
 
     /**
+     * Asigna un valor de info
+     * @return
+     */
+
+    void asignarInfo(double dato);
+
+    /**
      * Devuelve puntero a la celda siguiente
      * @return sig
      */

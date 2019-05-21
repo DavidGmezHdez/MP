@@ -8,22 +8,25 @@ CPPFLAGS = -Wall -g  -I$(INC) -c
 
 
 # **** Compilación de módulos ****
-$(BIN)/ejercicio1: $(OBJ)/ejercicio1.o $(LIB)/libejercicio1.a
-	$(CXX) -o $(BIN)/ejercicio1 $(OBJ)/ejercicio1.o -I$(INC) -L$(LIB) -lejercicio1
+$(BIN)/ejercicio4: $(OBJ)/ejercicio4.o $(LIB)/libejercicio4.a
+	$(CXX) -o $(BIN)/ejercicio4 $(OBJ)/ejercicio4.o -I$(INC) -L$(LIB) -lejercicio4
 
-$(LIB)/libejercicio1.a : $(OBJ)/utilidades.o 
-	ar rvs $(LIB)/libejercicio1.a $(OBJ)/utilidades.o
+$(LIB)/libejercicio4.a : $(OBJ)/Celda.o  $(OBJ)/Lista.o
+	ar rvs $(LIB)/libejercicio4.a $(OBJ)/Celda.o $(OBJ)/Lista.o
 
-$(OBJ)/utilidades.o : $(SRC)/utilidades.cpp
-	$(CXX) $(CPPFLAGS)  -o $(OBJ)/utilidades.o $(SRC)/utilidades.cpp -I$(INC)
+$(OBJ)/Celda.o : $(SRC)/Celda.cpp
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/Celda.o $(SRC)/Celda.cpp -I$(INC)
 
-$(OBJ)/ejercicio1.o : $(SRC)/ejercicio1.cpp
-	$(CXX) $(CPPFLAGS)  -o $(OBJ)/ejercicio1.o $(SRC)/ejercicio1.cpp -I$(INC)
+$(OBJ)/Lista.o : $(SRC)/Lista.cpp
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/Lista.o $(SRC)/Lista.cpp -I$(INC)
 
-all: $(BIN)/ejercicio1	
+$(OBJ)/ejercicio4.o : $(SRC)/ejercicio4.cpp
+	$(CXX) $(CPPFLAGS)  -o $(OBJ)/ejercicio4.o $(SRC)/ejercicio4.cpp -I$(INC)
+
+all: $(BIN)/ejercicio4	
 # **** Ejecutar ** **
 exec:
-	./$(BIN)/ejercicio1 
+	./$(BIN)/ejercicio4 
 # **** Limpieza ****
 clean :
 	-rm $(OBJ)/* $(BIN)/* $(LIB)/*
