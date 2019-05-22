@@ -1,53 +1,53 @@
 #include "Menu.h"
-    Menu::Menu(){
-        this->titulo = new char[20]; //Suponemos como máximo el tamaño del titulo de 20 caracteres
-        this->opc = new char*[1];
+    Menu::Menu(int n){
+        titulo = new char[20]; //Suponemos como máximo el tamaño del titulo de 20 caracteres
+        opc = new char*[n];
         for(int i=0;i<1;i++){
-            this->opc[i] = new char[20]; //Suponemos como maximo el tamaño de las opciones de 20 caracteres
+            opc[i] = new char[20]; //Suponemos como maximo el tamaño de las opciones de 20 caracteres
         }
-        this->nopc = 0;
+        nopc = 0;
     }
         
     Menu::~Menu(){
-        delete [] this->titulo;
-        for(int i=0;i<this->nopc;i++){
-            delete [] this->opc[i];
-        }
-
-        delete this->opc;
-        this->nopc = 0;
+        delete[] opc;
+        nopc = 0;
     }
 
     Menu::Menu(const Menu &m){
-        
+        this->nopc = m.nopc;
+        this->titulo = m.titulo;
+        this->opc = new char*[sizeof(m.opc)];
+        this->opc = m.opc;
     }
 
     void Menu::setTitulo(char *t){
-        this->titulo = t;
+        titulo = t;
     }
 
     int Menu::getnopc(){
-        return this->nopc;
+        return nopc;
     }
 
     void Menu::agregarOpcion(char *o){
-        this->opc[nopc] = o;
-        this->nopc++;
+        opc[nopc] = o;
+        nopc++;
     }
 
     void Menu::mostarMenu(){
         cout<<"Titulo: "<<titulo<<endl;
         cout<<"Opciones: "<<endl;
         for(int i=0;i<nopc;i++){
-            cout<<"Opcion "<<i<<": "<<this->opc[i]<<endl;
+            cout<<"Opcion "<<i<<": "<<opc[i]<<endl;
         }
     }
 
-    bool Menu::operator =(const Menu &m){
-        this->titulo = m.titulo;
-        this->nopc = m.nopc;
-        for(int i=0;i<this->nopc;i++){
-            this->opc[i] = m.opc[i];
+    Menu Menu::operator =(const Menu &m){
+        titulo = m.titulo;
+        nopc = m.nopc;
+        for(int i=0;i<nopc;i++){
+            opc[i] = m.opc[i];
         }
+
+        return *this;
     }
 

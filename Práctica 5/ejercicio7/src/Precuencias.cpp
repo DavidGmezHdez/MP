@@ -62,6 +62,8 @@ bool Precuencias::operator ==(const Precuencias &pr){
         if(this->parejas[i].dato != pr.parejas[i].dato ||this->parejas[i].nveces != pr.parejas[i].nveces)
             resultado = false;
     }
+
+    return resultado;
 }
 
 bool Precuencias::operator !=(const Precuencias &pr){
@@ -73,6 +75,8 @@ bool Precuencias::operator !=(const Precuencias &pr){
         if(this->parejas[i].dato == pr.parejas[i].dato ||this->parejas[i].nveces == pr.parejas[i].nveces)
             resultado = false;
     }
+
+    return resultado;
 }
 
 

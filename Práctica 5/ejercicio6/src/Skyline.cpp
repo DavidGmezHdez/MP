@@ -23,8 +23,9 @@ Skyline::Skyline(const Skyline &skyline){
 }
 
 
-void Skyline::aniadirEdificio(double final, double altura){
+void Skyline::aniadirEdificio(double comienzo,double final, double altura){
     alturas[nedificios] = altura;
+    abcisas[nedificios] = comienzo;
     this->nedificios+=1;
     abcisas[nedificios] = final;
 }
@@ -51,7 +52,7 @@ int Skyline::getnEdificios(){
 void Skyline::mostrarSkyline(){
     int contador = 0;
     bool salida = false;
-    //eliminarRepetidos(abcisas,n);
+    eliminarRepetidos(abcisas,n);
     cout<<"Tamaño n "<<n<<endl;
     cout<<"Numero edificios "<<nedificios<<endl;
     for(int i=1;i<=n && !salida;i++){
@@ -68,7 +69,7 @@ bool Skyline::operator[](int n){
         return false;
     }
     else{
-        cout<<"Edificio "<<n<<" Comienzo: "<<this->abcisas[n-1]<<" Final:"<<this->abcisas[n]<<"Altura: "<<alturas[n-1]<<endl;
+        cout<<"Edificio "<<n<<" Comienzo: "<<this->abcisas[n-1]<<" Final: "<<this->abcisas[n]<<" Altura: "<<alturas[n-1]<<endl;
         return true;
     }
 

@@ -2,10 +2,10 @@
 #include "Menu.h"
 
 int main() {
-    Menu m;
-    m.setTitulo("Estados");
-    m.agregarOpcion("Añadir");
-    m.agregarOpcion("Cambiar");
-    m.agregarOpcion("Eliminar");
+    Menu m(3);
+    m.setTitulo("Estados estado");
+    m.agregarOpcion("Añadir estado");
+    m.agregarOpcion("Cambiar estado");
+    m.agregarOpcion("Eliminar estado");
     m.mostarMenu();
 }

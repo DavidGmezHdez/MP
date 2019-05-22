@@ -1,38 +1,36 @@
 #include <iostream>
 
-# include "MatrizDispersa.h"
+#include "MatrizDispersa.h"
 
 int main() {
     cout<<"Constructor por defecto"<<endl;
-    MatrizDispersa matriz(4,4,4);
+    MatrizDispersa matriz(3,3,3);
 
     matriz.mostrarMatiz();
 
 
     cout<<"Constructor por valores"<<endl;
-    int filas[4] = {1,2,3,4};
-    int columnas[4] = {1,2,3,4};
-    double valores[4] = {1.0,2.0,3.0,4.0};
-    MatrizDispersa matrizValores(filas,4,columnas,4,valores,4);
+    int filas[3] = {0,1,2};
+    int columnas[3] = {0,1,2};
+    double valores[3] = {1.0,2.0,3.0};
+    MatrizDispersa matrizValores(filas,3,columnas,3,valores,3);
     matrizValores.mostrarMatiz();
-/*
+
     cout<<"Constructor por copia"<<endl;
-    MatrizDispersa matrizCopia(matriz);
+    MatrizDispersa matrizCopia(matrizValores);
     matrizCopia.mostrarMatiz();
-
+    cout<<endl;
     cout<<"Matrices a sumar"<<endl;
-    double valores2[4] = {2.0,4.0,6.0,8.0};
-    MatrizDispersa matrizCopia(filas,4,columnas,4,valores2,4);
+    double valores2[3] = {2.0,4.0,6.0};
+    MatrizDispersa matriz2(filas,3,columnas,3,valores2,3);
 
-    matriz.mostrarMatiz();
-
+    matrizValores.mostrarMatiz();
+    cout<<endl;
+    matriz2.mostrarMatiz();
     cout<<endl<<endl;
 
-    matrizCopia.mostrarMatiz();
+    matrizValores = matrizValores+matriz2;
 
-    cout<<endl<<endl;
-
-    matriz = matriz+matrizCopia;
-*/
-
+    cout<<"Resultado"<<endl;
+    matrizValores.mostrarMatiz();
 }
